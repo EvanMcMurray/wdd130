@@ -20,3 +20,8 @@ p{
 #second {
     font-size: 3em;
 }
+
+header {
+    display: grid;
+    grid-template-columns: 150px auto;
+}
