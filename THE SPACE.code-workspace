@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "wdd130",
+			"path": "."
+		},
+		{
+			"name": "coding class",
+			"path": "../coding class"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "wdd130"
+	}
+}
