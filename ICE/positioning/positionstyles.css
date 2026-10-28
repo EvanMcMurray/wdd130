@@ -165,6 +165,7 @@
   width: 400px;
   height: 400px;
 }
+
 .red6 {
   background-color: red; 
   grid-column: 1/7;
