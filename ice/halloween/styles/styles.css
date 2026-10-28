@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: orange;
+}
+
+img {
+    max-width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid purple;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: fuchsia;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: fuchsia;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    list-style: none;
+}
+
+main {
+    text-align: center;
+}
+
+footer {
+    margin-top: 90px;
+    text-align: right;
+    color: white;
+}
