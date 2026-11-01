@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+h1 {
+    justify-self: center;
+}
+
+h2 {
+    justify-self: center;
+}
+
+h3 {
+    justify-self: center;
+}
+
+#links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+footer {
+    gap: 500px;
+    margin-top: 100px;
+}
+
+#contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#contact_other {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
