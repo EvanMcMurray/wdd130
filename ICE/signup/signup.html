@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed Sign Up</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(120, 96, 64);
+        }
+
+        #formContainer {
+            display: grid;
+            grid-template-rows: .5fr .5fr .5fr;
+            border: 15px solid blue;
+            border-radius: 15px;
+            margin-top: 200px;
+            margin-bottom: 200px;
+            margin-left: 100px;
+            margin-right: 100px
+        }
+
+        #jesus_img {
+            grid-column: 2/3;
+            grid-row: 1;
+            width: 100%;
+            height: auto;
+        }
+
+        #myForm {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-row: 2;
+            grid-column: 2;
+            background-color: white;
+        }
+
+        h3 {
+            text-align: center;
+            grid-column: 1/4;
+            margin-top: 10px;
+        }
+
+        #closeBtn {
+            grid-column: 2;
+            grid-row: 1;
+            width: 25px;
+            height: 25px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        label {
+            grid-column: 1;
+        }
+        
+        #book_images {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column: 2/3;
+            grid-row: 3;
+            background-color: white;
+            margin-bottom: 40px;
+            align-self: center;
+        }
+
+        #newsnews {
+            align-items: center;
+            grid-column: 2;
+        }
+
+        #acknowledge {
+            align-items: center;
+            grid-column: 2;
+        }
+
+        #submit_button {
+            grid-column: 2;
+
+        }
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div id="formContainer">
+        <img src="images/jesus_feeds_5000.jpeg" id="jesus_img">
+        <button type="button" id="closeBtn">X</button>
+        <form id="myForm">
+            <h3>Sign Up for Daily Scripture Feed</h3>
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Gender:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+            
+            <div id="newsnews">
+                <section>
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to newsletter</label>
+                </section>
+            </div>
+
+            <div id="acknowledge">
+                <section>
+                    <input type="checkbox" id="conditions" name="conditions" required>
+                    <label for="conditions">I acknowledge the terms and conditions</label>
+                </section>
+            </div>
+
+            <div id="submit_button">
+                <section>
+                    <button type="submit">Submit</button>
+                </section>
+            </div>
+        </form>
+
+        <div id="book_images">
+            <img src="images/book_of_mormon.webp" width=100px>
+            <img src="images/doctrine_and_covenants.webp" width=100px>
+            <img src="images/new_testament.webp" width=100px>
+            <img src="images/old_testament.webp" width=100px>
+            <img src="images/pearl_of_great_price.webp" width=100px>
+        </div>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        // Here is some Javascript to start looking forward to wdd131
+        document.getElementById("closeBtn").addEventListener("click", function () {
+            document.getElementById("formContainer").style.display = "none";
+         });
+        const form = document.getElementById('myForm');
+        const output = document.getElementById('output');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop form from actually submitting
+
+            const formData = new FormData(form);
+            const entries = [];
+
+            for (const [key, value] of formData.entries()) {
+                if (key == "password") {
+                    entries.push(`<strong>${key}</strong>: ${value} (you should probably encrypt the password)`);
+                } else {
+                    entries.push(`<strong>${key}</strong>: ${value}`);
+                }
+            }
+
+            output.innerHTML = `
+            <br>  
+            <h3>Here is the data that would be sent to the server:</h3>
+            <ul>
+                ${entries.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            `;
+                });
+    </script>
+
+</body>
+
+</html>
